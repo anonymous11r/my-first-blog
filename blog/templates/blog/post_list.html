@@ -7,17 +7,12 @@
             <h1><a href="/">Welcome to Rakesh singh Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 1.05.2019, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>My name is Rakesh Singh. I am a software Engineering student pursing my B.tech degree from Future Institute of Engineering and Management
-            </p>
-        </div>
-
-        <div>
-            <p>published: 1.05.2019, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Now, I am Learning Django Form https://tutorial.djangogirls.org/ ..This site is best for beganners</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
